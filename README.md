@@ -25,7 +25,7 @@ Once the wallet is connected:
 - A dialog appears confirming the connected wallet address.
 - On the login page, a message displays the active address at the top for user clarity.
 
-📸 ![](./image 2.png)
+📸 ![](./image2.png)
 
 ---
 
@@ -43,7 +43,8 @@ The contract sets the foundation for future features like a global scoreboard. T
 - Upgrade to ERC20 tokens for coin mechanics.
 - On-chain leaderboard integration using stored player data.
 
-📸 ![](./image 3.png)
+📸 ![](./image3.png)
+📸 ![](./image4.png)
 
 ---
 
@@ -57,7 +58,8 @@ Steps followed:
 6. Interacted with the contract on the frontend.
 7. Also tested the contract deployment and interaction on the Sepolia testnet.
 
-📸 ![](./image 4.png)
+📸 ![](./image5.png)
+📸 ![](./image6.png)
 
 ---
 
