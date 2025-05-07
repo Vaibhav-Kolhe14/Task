@@ -1,96 +1,70 @@
+# Echoes of Aetherium – Skill Test Submission  
+**Submitted by: Vaibhav Kolhe**  
 
-## Card Memory Game - Simplified Skill Test
-
-### Welcome!
-Thank you for your interest in joining the Echoes of Aetherium Team! This is a simplified skill test designed to understand your approach to problem-solving and development. The tasks are categorized based on your area of expertise.
-
----
-
-### 🎯 **Objective:**
-Build a small part of a card memory game based on your assigned role. This is meant to be completed within **2–3 hours** to showcase your skills.
-
-### 🛠️ **Tech Stack:**
-- Frontend: React, Vite
-- Backend: Node.js, Express
-- Database: MongoDB (only if applicable)
-- Web3: MetaMask integration (only if applicable)
-
-### 🚀 **Setup Guide:**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/testadminia/Card-Memory.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Card-Memory
-   ```
-3. Set up the backend:
-   ```bash
-   cd ./backend
-   npm install
-   npm start
-   ```
-4. Set up the frontend:
-   ```bash
-   cd ../frontend
-   npm install
-   npm start
-   ```
-5. Visit `http://localhost:5173` to see the project.
+## Overview  
+For this skill test, I thoroughly analyzed the provided card memory game codebase before approaching the implementation. Although I had several ideas to enhance the game's logic, I kept UI changes minimal to respect the existing design structure. I've implemented all the required tasks for both the **Web3 Developer** and **Blockchain Developer** roles, detailed below.
 
 ---
 
-### 🧩 **Task Breakdown by Role (Ordered by Importance):**
+## Web3 Developer Tasks
 
-#### **Tech Lead:**
-- Review the existing codebase and suggest architectural improvements.
-- Draft a brief project roadmap highlighting key milestones and dependencies for scaling the game.
+### ✅ Task 1 – Implement MetaMask Wallet Connection  
+To handle wallet connectivity, I created a reusable `connectWallet.js` utility that integrates MetaMask using `ethers.js`.  
+Additionally, I created a `context` folder with a global context provider (`WalletContext.js`) to ensure that the `userAddress` and `contractInstance` are available throughout the app without reinitializing the contract repeatedly.
 
-#### **Project Manager:**
-- Create a simple project plan or task board to showcase how you would organize and prioritize tasks for a small team.
-- Identify potential risks in the project and propose mitigation strategies.
+**Highlights:**  
+- Uses React Context API for global state management.
+- Efficient and modular wallet connection logic.
 
-#### **Frontend Developer:**
-- Style the login page to be visually appealing and responsive.
-- Create a modal dialog for level selection (Easy, Medium, Hard).
-
-#### **Backend Developer:**
-- Implement a simple API endpoint to save game results.
-- Create a route to fetch the game result history (no need for complex authentication).
-
-#### **Full Stack Developer:**
-- Complete both the Frontend and Backend tasks.
-- Integrate the API to display the game result history on a new page.
-
-#### **Web3 Developer:**
-- Implement MetaMask wallet connection.
-- Show a message displaying the connected wallet address.
-
-#### **Blockchain Developer:**
-- Implement a simple Solidity smart contract that handles basic game logic (e.g., validating moves).
-- Deploy the contract locally using Hardhat and demonstrate interaction with the frontend.
-
-#### **Software Engineer:**
-- Optimize the card-flip logic for smooth performance.
-- Implement basic automated tests for the frontend.
-
-#### **Designer:**
-- Create assets like a styled Play button and card designs.
-- Suggest UI/UX improvements for the main screen.
-
-#### **QA Tester:**
-- Create a comprehensive testing plan that outlines your testing strategy for the card memory game, including at least 8 test cases with detailed steps and expected outcomes.  
-- Additionally, suggest best practices for maintaining quality throughout the development lifecycle.
+📸 ![](./image1.png)
 
 ---
 
-### 📝 **Submission:**
-- Once completed, please submit your work to **[admin@belolabs.com](mailto:admin@belolabs.com)**.
-- Share any notes, assumptions, or challenges you encountered.
+### ✅ Task 2 – Display Connected Wallet Address  
+Once the wallet is connected:
+- A dialog appears confirming the connected wallet address.
+- On the login page, a message displays the active address at the top for user clarity.
 
-### 💡 **Need Help?**
-If you have any questions or need guidance, feel free to reach out. We’re here to support you!
+📸 ![](./image 2.png)
 
 ---
 
-### ⚡ **Good Luck and Have Fun!**
+## Blockchain Developer Tasks
+
+### ✅ Task 1 – Solidity Smart Contract for Game Logic  
+I implemented a smart contract that tracks gameplay data on-chain. It includes:
+- Player initialization with 100 in-game coins.
+- +10 coins on a correct match, -2 coins on a wrong attempt.
+- Storage of player statistics such as level, matched pairs, and time.
+
+The contract sets the foundation for future features like a global scoreboard. Though I didn’t implement the scoreboard UI due to constraints, the data is already being recorded and could be easily extended.
+
+**Possible Improvements:**  
+- Upgrade to ERC20 tokens for coin mechanics.
+- On-chain leaderboard integration using stored player data.
+
+📸 ![](./image 3.png)
+
+---
+
+### ✅ Task 2 – Deploy Locally Using Hardhat and Integrate with Frontend  
+Steps followed:
+1. Initialized a Hardhat project and created `GameLogic.sol`.
+2. Wrote scripts for deployment (`deploy.js`) and interaction (`getPlayerData.js`).
+3. Configured `hardhat.config.js` for the local node.
+4. Compiled contracts to generate the ABI and artifacts.
+5. Deployed the contract while running `npx hardhat node`.
+6. Interacted with the contract on the frontend.
+7. Also tested the contract deployment and interaction on the Sepolia testnet.
+
+📸 ![](./image 4.png)
+
+---
+
+## Final Notes  
+I truly enjoyed working on this project and tried to give my best to meet your expectations. While working within the provided structure, I ensured solid integration between the frontend and blockchain layers. I’m excited about the possibility of contributing to the Echoes of Aetherium team and hope this project demonstrates both my passion and capabilities.
+
+Thank you for the opportunity!
+
+—  
+**Vaibhav Kolhe**  
